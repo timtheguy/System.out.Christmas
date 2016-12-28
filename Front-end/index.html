@@ -1,0 +1,229 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+
+  <meta property="og:url" content="http://christovich.me/christmas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="System.out.Christmas();" />
+  <meta property="og:description" content="Spread the holiday cheer! Send a positive message to an internet connected printer and watch your message print - then see what others have to say." />
+  <meta property="og:image" content="http://i.imgur.com/Vaeb2D6.png" />
+
+  <title>System.out.Christmas();</title>
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <script src="snowstorm.js"></script>
+
+  <script>
+    snowStorm.flakesMaxActive = 96; // show more snow on screen at once
+    snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view    
+    snowStorm.excludeMobile = false;
+    snowStorm.followMouse = false;
+    snowStorm.vMaxX = 3;
+    snowStorm.vMaxY = 1;
+
+  </script>
+  <style>
+    .console {
+      font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+    }
+
+  </style>
+</head>
+
+<body class="green" onload="SetDate()">
+  <div class="section no-pad-bot green" id="index-banner">
+    <div class="container">
+      <br>
+      <br>
+      <h5 class="header center red-text console"><span class="white-text">System.out.</span><b>Christmas();</b></h5>
+      <div class="row center white-text">
+        <h5 class="header col s12 light">A networked printer sharing holiday cheer from anywhere in the world</h5>
+        <p class="light">Add your name and a message and see it print on the live stream with the holiday messages of other users.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="row white-text hide-on-small-only">
+        <div class="col m5">
+          <h5>Press play to watch the stream...<span style="font-size: 10px;"> (expect a 10-30 second delay)</span></h5>
+        </div>
+        <div class="col m5 offset-m2 ">
+          <h5>...and then submit your message!</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6 white-text center hide-on-med-and-up">
+          <h5>Press play to watch the stream...<span style="font-size: 10px;"> (expect a 10-30 second delay)</span></h5>
+          <br>
+        </div>
+        <div class="col m5  s12  white z-depth-3" style="position: relative; ">
+          <br>
+          <div class="iv-embed" style="margin:0 auto;padding:0;border:0;width:100%;">
+            <div class="iv-v" style="display:block;margin:0;padding:1px;border:0;background:#000;">
+              <iframe class="iv-i" style="display:block;margin:0;padding:0;border:0;" src="https://open.ivideon.com/embed/v2/?server=200-332ac32efe7341d7dcfc452fe119d093&amp;camera=0&amp;width=&amp;height=&amp;lang=en" width="320" height="240" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="iv-b" style="display:block;margin:0;padding:0;border:0;">
+              <div style="float:right;text-align:right;padding:0 0 10px;line-height:10px;"><a class="iv-a" style="font:10px Verdana,sans-serif;color:inherit;opacity:.6;" href="https://www.ivideon.com/" target="_blank">powered by Ivideon</a></div>
+              <div style="clear:both;height:0;overflow:hidden;">&nbsp;</div>
+              <script src="https://open.ivideon.com/embed/v2/embedded.js"></script>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6 white-text center hide-on-med-and-up">
+          <br>
+          <h5>...and then submit your message!</h5>
+          <br>
+        </div>
+        <div class="col m5 offset-m2 s10 offset-s1 white z-depth-3" style="position: relative; ">
+          <!-- Form div -->
+          <div id="form" class="white" style="margin: 15px;">
+            <span class="black-text">
+            <div class="row"><br>
+              
+              <!-- Form shown on load and before submit -->
+              <form id="idForm" class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input name="timestamp" id="timestamp" type="text" class="validate">
+                    <label for="timestamp">Name</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <textarea name="message" id="message" class="materialize-textarea" length="512" maxlength="512"></textarea>
+                    <label for="message">Message</label>
+                  </div>
+                  <div class="input-field col s12 center">
+                    <button class="btn waves-effect waves-light red" type="submit" name="action">Submit
+                      <i class="material-icons right">send</i>
+                    </button>         
+                  </div>
+                </div>
+              </form>
+              
+                <!-- Preloader div shown on submit -->
+                <div id="preloader" class="center white" style="padding: 20px; padding-top: 20%; position:absolute;top:0;left:0;width:100%;height:100%; z-index: 100; ">
+                  <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-green-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="gap-patch">
+                        <div class="circle"></div>
+                      </div>
+                      <div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col m12 offset-m0 s12 ">
+        <div class=" card z-depth-3 red white-text" style="position: relative; ">
+          <div class="card-content">
+            Please note: <b>Posts are logged with the IP address of the user.</b> This is to prevent repeat abuse of the platform by the same user. The message stream is monitored, but material shown in the feed may contain mature content and does not reflect the views or beliefs of the site operator. Thanks for keeping it family friendly!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section white-text">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center red-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">What is it?</h5>
+
+            <p class="light">System.out.Christmas(); is an internet connected thermal printer that prints holiday messages from anywhere in the world when submitted via the form on this webpage. Live viewers can watch their message print in real time as they send their message to be shared with the world.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center red-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">How does it work?</h5>
+
+            <p class="light">A small thermal printer is connected to a WiFi-enabled Arduino that checks the server every 5 seconds for any new, unprinted messages. Each time a message is posted from this page, it is added to a queue of messages to be printed.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center red-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">How do I do it?</h5>
+
+            <p class="light">Simply submit your name (if you'd like) and a positive holiday message to share. Then, tune in to the live stream and watch your message print as well as messages from others.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <p class="light white-text">Project by Tim Christovich // <a href="https://www.linkedin.com/in/timtheguy" class="red-text ">LinkedIn</a></p>
+    </div>
+  </div>
+  </div>
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+  <!-- Form -->
+  <script>
+    // this is the id of the form
+    $("#idForm").submit(function(e) {
+      $("#preloader").fadeIn();
+      var url = "./addmessage.php"; // the script where you handle the form input.
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: $("#idForm").serialize(), // serializes the form's elements
+        success: function(data) {
+          if (data == "success") {
+            $("#preloader").html("<h5>Message posted.</h5>Thanks for sharing! Check the live stream to see your post. There will be a short delay.");
+          } else {
+            $("#preloader").html("<h5>Something went wrong.</h5>Try again, or <a href='https://m.me/tchristovich'> contact the webmaster.</a>");
+          }
+        }
+      });
+
+      e.preventDefault(); // avoid to execute the actual submit of the form.
+    });
+
+  </script>
+
+  <!-- Preloader -->
+  <script type="text/javascript">
+    //<![CDATA[
+    $(window).on('load', function() { // makes sure the whole site is loaded 
+        $('#status').fadeOut(); // will first fade out the loading animation 
+        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      })
+      //]]>
+  </script>
+</body>
+
+</html>
